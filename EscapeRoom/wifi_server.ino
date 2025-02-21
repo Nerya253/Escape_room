@@ -17,7 +17,6 @@ DIYables_4Digit7Segment_74HC595 display(SCLK, RCLK, DIO);
 
 unsigned long previousMillis = 0;
 
-// Function Prototypes
 void displayCode();
 void handleRoot();
 void handleNotFound();
@@ -33,6 +32,7 @@ void WiFi_setup() {
   server.onNotFound(handleNotFound);
   Serial.println("HTTP server started");
   server.begin();
+  
   previousMillis = millis();
 }
 
@@ -74,6 +74,13 @@ void displayCode() {
   display.clear();
   display.printInt(code, false);
   display.show();
+}
+
+void correctCode() {
+
+}
+void wrongCode() {
+  
 }
 
 void handleRoot() {
